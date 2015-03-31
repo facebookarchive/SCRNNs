@@ -18,9 +18,9 @@ Here are some of the examples of how to use the code.
 
 * To run a standard RNN model on PenntreeBank with following
 hyper-parameters:
-..* hidden units: 100
-..* minibatch size: 32
-..* learning rate: 0.05
+  * hidden units: 100
+  * minibatch size: 32
+  * learning rate: 0.05
 you type
 ```
 cuth -i main.lua -dset ptb -name srnn_sm -nhid 100 -batchsz 32 -eta 0.05
@@ -28,11 +28,11 @@ cuth -i main.lua -dset ptb -name srnn_sm -nhid 100 -batchsz 32 -eta 0.05
 
 * To run a LSTM RNN model on Text8 with following
 hyper-parameters:
-..* hidden units: 100
-..* minibatch size: 32
-..* learning rate: 0.05
-..* unfolding depth: 20
-..* backprop frequency: 5
+  * hidden units: 100
+  * minibatch size: 32
+  * learning rate: 0.05
+  * unfolding depth: 20
+  * backprop frequency: 5
 you type
 ```
 cuth -i main.lua -dset text8 -name lstm_sm -nhid 100 -batchsz 32 -eta 0.05 -blen 20 -bfreq 5
@@ -40,12 +40,12 @@ cuth -i main.lua -dset text8 -name lstm_sm -nhid 100 -batchsz 32 -eta 0.05 -blen
 
 * To run a Structurally Constrained RNN model on PenntreeBank with following
 hyper-parameters:
-..* hidden units: 100
-..* number of constrained units: 20
-..* minibatch size: 32
-..* learning rate: 0.05
-..* unfolding depth: 30
-..* backprop frequency: 5
+  * hidden units: 100
+  * number of constrained units: 20
+  * minibatch size: 32
+  * learning rate: 0.05
+  * unfolding depth: 30
+  * backprop frequency: 5
 you type
 ```
 cuth -i main.lua -dset text8 -name scrnn_sm -nhid 100 -nslow 20 -batchsz 32 -eta 0.05 -blen 30 -bfreq 5
