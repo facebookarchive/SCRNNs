@@ -24,7 +24,7 @@ hyper-parameters:
 
 you type
 ```
-cuth -i main.lua -dset ptb -name srnn_sm -nhid 100 -batchsz 32 -eta 0.05
+th -i main.lua -dset ptb -name srnn_sm -nhid 100 -batchsz 32 -eta 0.05
 ```
 
 * To run a LSTM RNN model on Text8 with following
@@ -37,7 +37,7 @@ hyper-parameters:
 
 you type
 ```
-cuth -i main.lua -dset text8 -name lstm_sm -nhid 100 -batchsz 32 -eta 0.05 -blen 20 -bfreq 5
+th -i main.lua -dset text8 -name lstm_sm -nhid 100 -batchsz 32 -eta 0.05 -blen 20 -bfreq 5
 ```
 
 * To run a Structurally Constrained RNN model on PenntreeBank with following
@@ -51,12 +51,12 @@ hyper-parameters:
 
 you type
 ```
-cuth -i main.lua -dset text8 -name scrnn_sm -nhid 100 -nslow 20 -batchsz 32 -eta 0.05 -blen 30 -bfreq 5
+th -i main.lua -dset text8 -name scrnn_sm -nhid 100 -nslow 20 -batchsz 32 -eta 0.05 -blen 30 -bfreq 5
 ```
 
 To list all the options available, you need to type
 ```
-cuth main.lua --help
+th main.lua --help
 ```
 
 
@@ -65,7 +65,7 @@ The software requires you to have the following two packages already
 installed on your systems:
 * Torch 7
 * fbcunn
-It runs on standard Linux box.
+* Installation instructions for both on Ubuntu 14.04 are here: https://github.com/facebook/fbcunn/blob/master/INSTALL.md
 
 
 ## Installing
@@ -77,12 +77,12 @@ the code from there. See below.
 The top level file is called main.lua. In order to run the code
 you need to run the file using torch. For example:
 ```
-cuth -i main.lua -<option1_name> option1_val -<option2_name> option2_val ...
+th -i main.lua -<option1_name> option1_val -<option2_name> option2_val ...
 ```
 
 In order to check what all options are available, type
 ```
-cuth -i main.lua --help
+th -i main.lua --help
 ```
 
 ## License
