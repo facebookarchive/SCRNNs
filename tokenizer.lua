@@ -17,7 +17,6 @@
 -- based on their frequency to generate buckets with equal probability
 
 require('math')
-local ffivector = require('fb.ffivector')
 local pl = require('pl.import_into')()
 
 local Tokenizer = {}
@@ -195,7 +194,9 @@ function Tokenizer.tokenize(dict, filenameIn, filenameOut, config, eos)
    local threshold = config.threshold
    local eos = config.eos
    -- first count how many words there are in the corpus
-   local all_lines = ffivector.new_string()
+   -- NOTE: all_lines was once ffivector.new_string(). I believe this is 
+   --       equivalent but less efficient.
+   local all_lines = {}
    local tot_nr_words = 0
    local tot_lines = 0
    for s in io.lines(filenameIn) do
