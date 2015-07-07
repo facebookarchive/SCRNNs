@@ -16,6 +16,14 @@
 -- hyper-parameters specified in the config file
 local models = {}
 
+require("nn.LinearNB")
+-- Only require LookupTableGPU/cunn if we have a cuda device.
+if g_params.cuda_device then
+    require("nn.LookupTableGPU")
+else
+    nn.LookupTableGPU = nn.LookupTable
+end
+
 -- function that takes three input arguments
 --          params: table of hyperparameters for model (options.lua)
 --            dict: the data dictionary (this should have information about the
