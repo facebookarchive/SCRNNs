@@ -38,7 +38,7 @@ if g_params.cuda_device then
 end
 
 if string.find(g_params.model.name, 'srnn') then
-    require('rnn')
+    require('./rnn')
 elseif string.find(g_params.model.name, 'lstm') then
     require('lstm')
 elseif string.find(g_params.model.name, 'scrnn') then

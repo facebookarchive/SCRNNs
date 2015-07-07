@@ -18,7 +18,7 @@
 require('torch')
 require('sys')
 require('nn')
-require('rnn')
+require('./rnn')
 
 local LSTM = torch.class("LSTM", "RNN")
 
