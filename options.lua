@@ -133,7 +133,7 @@ function RNNOption:__init()
     self:option('-nepochs',
                 'trainer.n_epochs', 100,
                 'Number of training epochs')
-    self:optionDisableIfNegative('-devid', 'cuda_device', 1,
+    self:optionDisableIfNegative('-devid', 'cuda_device', -1,
                                  'GPU device id (-1 for CPU)')
     self:option('-user',
                 'user', '',

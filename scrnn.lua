@@ -19,7 +19,7 @@
 require('torch')
 require('sys')
 require('nn')
-require('rnn')
+require('./rnn')
 
 local SCRNN = torch.class("SCRNN", "RNN")
 

@@ -15,12 +15,8 @@
 -- This file trains and tests the RNN with single worker.
 require('nn')
 require('nngraph')
-require('fbcunn')
 require('train')
 require('options')
-local dtls = require('datatools')
-local mdls = require('mfactory')
-local utls = require('util')
 
 -- Parse arguments
 local cmd = RNNOption()
@@ -30,6 +26,11 @@ cmd:option('-overrideparams',
 g_params = cmd:parse(arg)
 g_params.trainer.save_dir = g_params.trainer.save_dir
 
+-- Require local modules.
+local mdls = require('mfactory')
+local dtls = require('datatools')
+local utls = require('./util')
+
 -- cuda?
 if g_params.cuda_device then
     require 'cutorch'
@@ -38,7 +39,7 @@ if g_params.cuda_device then
 end
 
 if string.find(g_params.model.name, 'srnn') then
-    require('rnn')
+    require('./rnn')
 elseif string.find(g_params.model.name, 'lstm') then
     require('lstm')
 elseif string.find(g_params.model.name, 'scrnn') then
