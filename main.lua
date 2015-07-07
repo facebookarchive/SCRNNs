@@ -20,7 +20,7 @@ require('train')
 require('options')
 local dtls = require('datatools')
 local mdls = require('mfactory')
-local utls = require('util')
+local utls = require('./util')
 
 -- Parse arguments
 local cmd = RNNOption()
